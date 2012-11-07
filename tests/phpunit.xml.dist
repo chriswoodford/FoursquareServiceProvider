@@ -1,0 +1,11 @@
+<phpunit bootstrap="./bootstrap.php">
+
+    <php>
+        <includePath></includePath>
+    </php>
+    
+    <testsuite name="Provider Test Suite">
+        <file>./lib/TheTwelve/Foursquare/Silex/FoursquareServiceProvider.php</file>
+    </testsuite>
+    
+</phpunit>

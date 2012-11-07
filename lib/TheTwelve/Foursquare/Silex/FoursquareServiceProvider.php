@@ -10,7 +10,23 @@ class FoursquareServiceProvider implements Silex\ServiceProviderInterface
     public function register(Application $app)
     {
 
-        // TODO: instantiate http client
+        $app['foursquare.client'] = $app->share(function() use ($app) {
+
+            switch ($app['foursquare.clientKey']) {
+
+                case 'buzz':
+                    $browser = \Buzz\Browser();
+                    return \TheTwelve\Foursquare\HttpClient\BuzzHttpClient($browser);
+
+                case 'symfony':
+                default:
+                    // the Symfony client is preferred with silex
+                    return \TheTwelve\Foursquare\HttpClient\SymfonyHttpClient();
+                    return;
+
+            }
+
+        });
 
         $app['foursquare'] = $app->share(function() use ($app) {
 

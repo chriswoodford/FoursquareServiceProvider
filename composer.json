@@ -14,11 +14,15 @@
     ],
     "require": {
         "php": ">=5.3.3",  
-        "thetwelvelabs/foursquare": "*"
+        "thetwelvelabs/foursquare": "0.1.x-dev"
+    },
+    "require-dev": {
+        "silex/silex": "*"
     },
     "autoload": {
         "psr-0": {
-            "TheTwelve\\Foursquare\\Silex": "lib"
+            "TheTwelve\\Foursquare\\Silex\\": "lib"
         }
-    }
+    },
+    "minimum-stability": "dev"
 }
