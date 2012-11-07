@@ -1,0 +1,24 @@
+{
+    "name": "thetwelvelabs/foursquare-service-provider",
+    "type": "library",
+    "description": "Foursquare API Client for the Silex Framework",
+    "keywords": ["foursquare", "silex"],
+    "homepage": "http://thetwelvelabs.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Chris Woodford",
+            "email": "chris.woodford@gmail.com",
+            "homepage": "http://ideaphp.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",  
+        "thetwelvelabs/foursquare": "*",
+    },
+    "autoload": {
+        "psr-0": {
+            "TheTwelve\\Foursquare\\Silex": "lib"
+        }
+    }
+}
