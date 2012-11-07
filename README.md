@@ -39,7 +39,7 @@ Register the service provider
       ));
 
 
-Get an instance of the [https://github.com/chriswoodford/foursquare-php](TheTwelve\Foursquare\ApiGatewayFactory)
+Get an instance of the [TheTwelve\Foursquare\ApiGatewayFactory](https://github.com/chriswoodford/foursquare-php)
 
       $factory = $app['foursquare'];
 
