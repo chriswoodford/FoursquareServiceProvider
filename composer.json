@@ -1,6 +1,5 @@
 {
     "name": "thetwelvelabs/foursquare-service-provider",
-    "type": "library",
     "description": "Foursquare API Client for the Silex Framework",
     "keywords": ["foursquare", "silex"],
     "homepage": "http://thetwelvelabs.com",
@@ -13,17 +12,16 @@
         }
     ],
     "require": {
-        "php": ">=5.3.3",  
-        "thetwelvelabs/foursquare": "0.1.x-dev"
+        "php": ">=5.3.3",
+        "thetwelvelabs/foursquare": "0.1.*"
     },
     "require-dev": {
-        "silex/silex": "*"
+        "silex/silex": "1.0.*"
     },
     "autoload": {
         "psr-0": {
             "TheTwelve\\Foursquare\\Silex\\": "lib"
         }
     },
-    "version" : "master-dev",
     "minimum-stability": "dev"
 }
