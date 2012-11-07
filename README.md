@@ -1,7 +1,7 @@
 # Foursquare API Client Service Provider (Silex) by TheTwelve Labs
 ==================================================================
 
-A Silex Service Provider for our Foursquare API Client
+A Silex Service Provider for our Foursquare API Client  
 [https://github.com/chriswoodford/foursquare-php](https://github.com/chriswoodford/foursquare-php)
 
 ## Installation
@@ -39,7 +39,7 @@ Register the service provider
       ));
 
 
-Get an instance of the ApiGatewayFactory
+Get an instance of the [https://github.com/chriswoodford/foursquare-php](TheTwelve\Foursquare\ApiGatewayFactory)
 
       $factory = $app['foursquare'];
 
