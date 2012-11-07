@@ -14,7 +14,7 @@
     ],
     "require": {
         "php": ">=5.3.3",  
-        "thetwelvelabs/foursquare": "*",
+        "thetwelvelabs/foursquare": "*"
     },
     "autoload": {
         "psr-0": {
