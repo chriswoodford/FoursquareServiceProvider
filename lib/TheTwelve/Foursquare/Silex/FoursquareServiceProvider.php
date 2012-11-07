@@ -2,12 +2,13 @@
 
 namespace TheTwelve\Foursquare\Silex;
 
-use Silex;
+use Silex,
+    TheTwelve\Foursquare\HttpClient;
 
 class FoursquareServiceProvider implements Silex\ServiceProviderInterface
 {
 
-    public function register(Application $app)
+    public function register(Silex\Application $app)
     {
 
         $app['foursquare.client'] = $app->share(function() use ($app) {
@@ -15,13 +16,13 @@ class FoursquareServiceProvider implements Silex\ServiceProviderInterface
             switch ($app['foursquare.clientKey']) {
 
                 case 'buzz':
-                    $browser = \Buzz\Browser();
-                    return \TheTwelve\Foursquare\HttpClient\BuzzHttpClient($browser);
+                    $browser = new \Buzz\Browser();
+                    return new HttpClient\BuzzHttpClient($browser);
 
                 case 'symfony':
                 default:
                     // the Symfony client is preferred with silex
-                    return \TheTwelve\Foursquare\HttpClient\SymfonyHttpClient();
+                    return new HttpClient\SymfonyHttpClient();
                     return;
 
             }

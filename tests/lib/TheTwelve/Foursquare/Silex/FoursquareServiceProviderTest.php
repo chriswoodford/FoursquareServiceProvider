@@ -14,7 +14,7 @@ class TheTwelve_Foursquare_Silex_FoursquareServiceProviderTest
 
         $app->register(new FoursquareServiceProvider(), array(
             'foursquare.version' => 2,
-        	'foursquare.endpointUri' => 'https://api.foursquare.com',
+        	'foursquare.endpoint' => 'https://api.foursquare.com',
         	'foursquare.clientKey' => 'symfony',
         ));
 

@@ -24,5 +24,6 @@
             "TheTwelve\\Foursquare\\Silex\\": "lib"
         }
     },
+    "version" : "master-dev",
     "minimum-stability": "dev"
 }
