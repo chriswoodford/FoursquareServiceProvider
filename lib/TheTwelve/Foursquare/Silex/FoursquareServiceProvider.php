@@ -36,6 +36,7 @@ class FoursquareServiceProvider implements Silex\ServiceProviderInterface
             $factory = new \TheTwelve\Foursquare\ApiGatewayFactory($client);
             $factory->useVersion($app['foursquare.version']);
             $factory->setEndpointUri($app['foursquare.endpoint']);
+            $factory->setClientCredentials($app['foursquare.clientId'], $app['foursquare.clientSecret']);
 
             return $factory;
 
