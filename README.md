@@ -14,9 +14,8 @@ foursquare client into your project.
 
       {
           "require": {
-              "thetwelvelabs/foursquare-service-provider": "dev-master"
+              "thetwelvelabs/foursquare-service-provider": "dev-master@dev"
           },
-          "minimum-stability": "dev"
       }
 
 ### Download composer into your application root

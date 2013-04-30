@@ -13,7 +13,7 @@
     ],
     "require": {
         "php": ">=5.3.3",
-        "thetwelvelabs/foursquare": "0.1.*"
+        "thetwelvelabs/foursquare": "master@dev"
     },
     "require-dev": {
         "silex/silex": "1.0.*"
