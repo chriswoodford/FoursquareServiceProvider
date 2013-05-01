@@ -3,7 +3,8 @@
 namespace TheTwelve\Foursquare\Silex;
 
 use Silex,
-    TheTwelve\Foursquare\HttpClient;
+    TheTwelve\Foursquare\HttpClient,
+    TheTwelve\Foursquare\Redirector;
 
 class FoursquareServiceProvider implements Silex\ServiceProviderInterface
 {
