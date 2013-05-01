@@ -21,16 +21,21 @@ class FoursquareServiceProvider implements Silex\ServiceProviderInterface
                     return new HttpClient\BuzzHttpClient($browser);
 
                 case 'symfony':
-                default:
                     // the Symfony client is preferred with silex
                     return new HttpClient\SymfonyHttpClient();
-                    return;
+
+                default:
+                    return new HttpClient\CurlHttpClient($app['foursquare.pathToCertificate']);
 
             }
 
         });
 
         $app['foursquare.redirector'] = $app->share(function() use ($app) {
+
+            if (!isset($app['foursquare.redirectorKey'])) {
+                return null;
+            }
 
             switch ($app['foursquare.redirectorKey']) {
 
@@ -48,8 +53,9 @@ class FoursquareServiceProvider implements Silex\ServiceProviderInterface
         $app['foursquare'] = $app->share(function() use ($app) {
 
             $client = $app['foursquare.client'];
+            $redirector = $app['foursquare.redirector'];
 
-            $factory = new \TheTwelve\Foursquare\ApiGatewayFactory($client);
+            $factory = new \TheTwelve\Foursquare\ApiGatewayFactory($client, $redirector);
             $factory->useVersion($app['foursquare.version']);
             $factory->setEndpointUri($app['foursquare.endpoint']);
             $factory->setClientCredentials($app['foursquare.clientId'], $app['foursquare.clientSecret']);
