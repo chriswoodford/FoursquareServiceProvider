@@ -29,6 +29,21 @@ class FoursquareServiceProvider implements Silex\ServiceProviderInterface
 
         });
 
+        $app['foursquare.redirector'] = $app->share(function() use ($app) {
+
+            switch ($app['foursquare.redirectorKey']) {
+
+                case 'symfony':
+                    // the Symfony client is preferred with silex
+                    return new Redirector\SymfonyRedirector();
+
+                default:
+                    return new Redirector\HeaderRedirector();
+
+            }
+
+        });
+
         $app['foursquare'] = $app->share(function() use ($app) {
 
             $client = $app['foursquare.client'];
